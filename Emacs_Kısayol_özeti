@@ -1,0 +1,147 @@
+
+
+
+Emacs kullanımını öğrenmek amaçlı oluşturduğum Özet Emacs komutları:
+
+
+NOT:
+--  C = ctrl tuşu anlamına gelmektedir.
+--  M = alt tuşu anlamına gelmektedir.
+
+
+C-x C-c            ->  Emacs ten çıkar.
+C-v                ->  Aşağı doğru bir ekran boyunca scroll kaydırır.
+M-v                ->  Yukarı doğru bir ekran boyunca scroll kaydırır.
+C-l (ı değil L )   ->  İmleci bulunduğu yerde sabit tutarak scroll kaydırır.
+
+Tuş kombinasyonları:
+
+.........................................
+..................C-p....................
+...............________..................
+...............|..._...|.................
+...............|../ \..|.................
+...............|...|...|.................
+...............|_______|.................
+......._________________________.........
+......|.......||.......||.......|........
+..C-b.|./____.||...|...||.____\.|.C-f....
+......|.\.....||..\_/..||...../.|........
+......|_______||_______||_______|........
+..................C-n....................
+.........................................
+
+M-f                ->  İleri doğru sözcük sözcük ilerleme yapar.
+M-b                ->  Geriye doğru sözcük sözcük ilerleme yapar.
+C-a                ->  Satır başına gider.
+C-e                ->  Satır sonuna gider.
+M-a                ->  Cümle başına gider.
+M-e                ->  Cümle sonuna gider.
+M->                ->  Bütün yazının en sonuna gider.
+M-<                ->  Bütün yazının en başına gider.
+C-u                ->  Komutun kaç kere çalışacağnı belirler.
+
+ÖRN: C-u 10 C-f    -> C-f komutunu 10 kere çalıştırır.
+ÖRN: C-u 5 a       -> ekrana 5 kere a yazar.
+!!İSTİSNA : C-v ve M-v komutlarında imleci satır kaydırmak olarak çalıştırır.
+ÖRN: C-u 6 C-v     -> İmleci 8 satır aşağı kaydırır.
+
+C-g                ->  İşlem iptal eder.
+
+NOT: Emacs komuta yanıt vermediğinde vey yanlışlıkla ESC tuşuna bastığınızdada
+kullanılabilir.
+C-u 100 C-g C-f şeklinde kullanımda ise sayısal değeri iptal ederek C-f komutunu
+birkere çalıştırır.
+
+Kapalı Komut Kullanımı:
+-----------------------
+Emacs e yeni başlayanlar için sorunlar yaşanmaması adına bazı komutların kullanımı
+engellenmiştir. bu tür komutlara kapalı komut ismi verilir. kapalı komut kullandığınızda
+Emacs size komutu kullanmanıza ilişkin bir soru sorar. Cevabınız evet ise space (boşluk)
+tuşuna basın hayır ise n yazıp enter tuşuna basın.
+
+C-x 1              ->  İmlecin seçili olduğu ekran hariç bütün ekranları kapatır.
+
+_______
+| <-- | Backspace tuşu gösterimi "<--" için;
+
+<--                ->  İmlecin bir sağındaki karakteri siler.
+C-d                ->  İmlecin bir solundaki karakteri siler.
+M-<--              ->  İmlecten önceki sözcüğü yok eder.(Silmekle aynı değil)
+
+!!=> Emacs yok edilen demek bir nevi kes demek denebilir. belli sınıra kadar yok edilen
+harf,rakam,sözcük ya da cümle Emacs in geçici hafızasında tutulur. istenilen yere istenilen
+zamanda geri getirme işlemi yapılabilir. Silinen bir sözcük ise geri getirelemez.Ancak geri alma
+işlemi ile getirilebilir ki bu da yaptığınız diğer işlemleride geri getirir.Özetle yok edilen işlem
+bir nevi kesilmiş yapıştırılmak üzere beklemededir.
+
+M-d                ->  İmleçten sonraki sözcüğü yok eder.
+C-k                ->  İmleçten satır sonuna kadar yok eder.
+M-k                ->  İmleçten cümle sonuna kadar yok eder.
+C-space ya da C-@  ->  Seçme işlemi yapar. (Yön tuşlarıyla birlikte kullanılır)
+C-y                ->  En son yok edilen yazıyı geri getirir(geri alma değildir..)
+M-y                ->  Önceki yok edilenleri geri getirir. (ilk geri getirmeden daha öncelerinide)
+
+Özet Ana işlem
+------------------------------------------
+
+M-w                ->  Seçileni kopyalar.
+C-w                ->  Seçileni keser.
+C-y                ->  Seçileni yapıştırır.
+-------------------------------------------
+C-x u    -----
+C-_          |------> Geri alma işlemi
+C-/      -----
+
+C-x C-f isim       ->  Var olan ya da yeni dosya yaratır.
+C-x C-s            ->  Kaydetme işlemi
+
+!!-> Emacs yeni dosya kaydettiğinde eskisini saklar. Böylece her zaman dosyanızın
+yedeği alınmış olur.
+Ayrıca Emacs her açtığınız dosya için bir ara bellek oluşturur.
+C-x C-b            ->  Arabellek listesini gösterir.
+C-x b isim         ->  Adı yazılan ara belleği açar. bir nevi C-x C-f komutu ile aynıdır.
+C-x s              ->  Ara belleği kaydeder. bir nevi C-x C-s ile aynıdır.
+C-z                ->  Emacs ı geçici olarak kapatır.(şimdiki sistemlerde
+simge durumuna küçültür.)
+M-x                ->  Uzun komut girişi için kullanılır.
+ÖRN :
+--  M-x replace-string
+--  M-x fundamental-mode
+--  M-x text mode
+--  M-x auto fill gibi;
+NOT: komutu tam hatırlamadığınızda M-x repl yazıp TAB tuşuna bastığınızda komutu otomatik tamamlar.
+
+Emacs bilgisayarda oluşabilecek sorunlara karşı (ani kapanma,çökme,donma v.b) otomatik kaydet
+işlemi yapar.
+deneme.txt adlı bir doyada çalışıyorunuz.
+Emacs ise #deneme.txt adında otomatik kayıt oluşturur.
+Bilgisayarınız aniden kapandı.
+Bilgisayarınız açıp Emacs i açıp tekrar deneme.txt doyasını açtıpınızda
+verileriniz yok olmuş ise ;
+deneme.txt açıkken (#deneme.txt değil)
+M-x recovery-file komutunu girin ve enter a basın.
+otomatik kayıt ile oluşturulmuş yedek ile dosyanız kurtarılmış olacak.
+
+C-s isim               ->  Yazılan sözcüğü ilk harfinden itibaren ileri doğru aramaya başlar.
+C-r isim               ->  Yazılan sözcüğü ilk harfinden itibaren geriye doğru aramaya başlar.
+C-x 2                  ->  Ekranı ikiye böler.
+C-x o                  ->  Ekranlar arası imleç geçişi yapar.(ekranı seçer)
+C-M-v                  ->  Diğer ekrana geçemeden o erkana göz atmanı sağlar.
+C-h c karakter         ->  Komutu ya da karakteri özetle açıklar.
+C-h k karakter         ->  Komutu ya da karakteri ayrıntılı açıklar.
+C-h a                  ->  Benzer karakterleri listeleyerek açıklar.
+ÖRN: C-h a file komutu yazıldığında içinde file geçen bütün komutları listeler.
+
+|----------------------------------------------------------------------
+| --:**-TUTORIAL               4%               L80           (text)
+|---------|--------------------|-----------------|--------------|-----
+          |                    |                 |              |
+    hangi dosyada      sayfanın yukarından  İmlecin kaçıncı  hangi modda      
+    işlem yapıldığını  yüzde kaçı görüntü-  satırda olduğu-  çalışıldığını
+    gösterir.          lendiğini söyler.    nu açıklar.      söyler.
+
+
+
+
+
